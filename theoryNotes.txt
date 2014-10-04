@@ -30,4 +30,39 @@ Signals are digitized by amplification and low-pass filtered, then digitally sam
 
 We can exactly reconstruct the signal using interpolation (Nyquist Sampling Theorem).
 
+## Signal processing
 
+Linear time invariant systems and more complicated approaches to statistical signal procecessing.
+
+A brain-computer interfaces transdocues the input signal x(n) into a control signal y(n).
+
+BCIs are usual nonlinear, and they usually are multi-rate systems.
+
+# Static Filters
+
+Squaring the signal is useful for calculating the variance of the system, another useful one is the logarithm.
+
+Spatial filters: transform a multi-channel signal X(n) such that each Y(n) depends only on X(n); most are linear, so that Y(n) = MX(n).  They can invert volumne conduction and remap channel signals to approximate source signals (this is their main use in BCIs).
+
+Ex: re-referencing, ICA, common spatial patterns, surface Laplacian (subtract local  signal from its neighbors').  
+
+Temporal filters are orthogonal to spatial filters in some sense.  Moving average is a smoothing operator, a temporal filter, and in fact a spectral filter.  It's hard to control what it retains.
+
+Spectral filters are designed for their effect on the spectrum (a representation of the signal as a sum of sinusouids).  We could also use the Fourier series represetnation.
+
+Spectral filters include high-pass, low-pass, band-pass.  We can isolate oscillations or ERPs of interest.
+
+Finite impulse response filter: performs a convolution between the signal and the kernel (but the trick is the "kernel" coefficients b_k.
+
+Different frequencies in the construction of low-pass filters have different lags.  
+
+# A simple Neurofeedback BCI
+
+We want to feed back the amplitude of a brain idle oscillation to the user/subject.  Band-pass in the 8-13 hz range, squaring, moving average, then take the square root or logarithm.
+
+# Prediction functions
+We view a limited-memory BCI as a mathematical mmapping from input to output where the output could be binary (excited/not excited).  There's an arbitrary functional form with unknown parameters.  The question is how to figure out what those parameters are.
+
+Functional form should reflect relationship between observation and desired output.
+
+These two frameworks are often used in combination: we can query the prediciton function on demand; the costly spectral filtering is done in the signal processing portion and we do the predictive mapping at lower rate in the functional portion.  In this way, the BCI is an oracle that consumes one or more signals and can respond to queries about a pre-defined question.
