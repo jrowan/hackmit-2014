@@ -8,7 +8,7 @@ import urllib2
 ##returns the json containing the sentiment anaylsis as performed by the
 ##HP IDOL on Demand API
 def text_sentiment_in_json(text_query):
-    formmated_text_query = urllib2.quote(textQuery)
+    formmated_text_query = urllib2.quote(text_query)
     req = urllib2.urlopen("https://api.idolondemand.com/1/api/sync/analyzesentiment/v1?text=" \
                           + formmated_text_query + "&apikey=46d5fbfc-c772-4e3d-84a1-06ca992a6c80")
     response = req.read()
