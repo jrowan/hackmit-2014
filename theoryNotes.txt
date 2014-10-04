@@ -1,0 +1,33 @@
+## Sensing and Acquisition
+
+Two kinds of signals: event-related potentials and oscillatory processes. We're interested in event-related potentials.
+
+Widely-scattered neural populations don't exhibit synchrony, but close-by (order of 1cm) there is more likelihood for synchrony.
+
+Some electromagnetic fields can cancel each other out (e.g. the Amygdala).
+
+Motor cortex (precentral gyrus) will show up over the ears, frontal lobe/prefrontal lobe (higher function) will show up on the forehead.
+
+Singal neurons show spiking behavior (firing behavior might encode output signal).  The EEG is an average of millions of processes, but we might see modes at higher frequencies which come from spiking and lower frequences from background synchronicity, and then there's noise.
+
+Average many instances of the same brain process to make the noise cancel itself out; this is how we get ERPs.
+
+We see different signals for expected vs. unexpected signals.  
+
+Single-trial ERPs are much harder to identify.  This requires pattern recognition and machine learning, and we usually need to integrate multiple time series.
+
+Oscillatory processes (low to high frequency): delta, theta, alpha, beta, gamma.
+
+Alpha: sensory areas and motor areas exhibit strong alpha-band oscillations wehn idle in most subjects.
+
+We see correlation between the different channels when we separate into statistically independent components which sum to generate the signal. We see that one independent component is spiking at regular intervals: that's blinking.  
+
+Event-related coherence between two signal components.  Some moments they have high power at the same time, some they're phase-locked, some they're out of phase.  We can observe this phenomenon and see if there's information in there.
+
+Effective connectivity: sophisticated measure of interaction between mutliple signals "information flow".
+
+Signals are digitized by amplification and low-pass filtered, then digitally sampled.  We know that it's low-pass filtered even if it looks like a step function; there's a highest frequency you care about and you filter right below that.
+
+We can exactly reconstruct the signal using interpolation (Nyquist Sampling Theorem).
+
+
